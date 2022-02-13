@@ -10,13 +10,11 @@ int BS(vector<int>a,int n,int tar){
     
     while(lo<hi){
         int mid = lo + (hi-lo)/2;
-        if(a[mid]>tar){
-            hi = mid;
-        }
-        else{
+        if(tar >= a[mid]){
             lo = mid+1;
-            ans = mid;
+            ans = lo;
         }
+        else hi = mid;
     }
     return ans;
 
