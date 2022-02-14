@@ -10,13 +10,13 @@ int BS(vector<int>a,int n,int tar){
     
     while(lo<hi){
         int mid = lo + (hi-lo)/2;
-        if(a[mid]<tar){ // then look to the right
+        if(a[mid]<tar+1){ // then look to the right
             lo = mid+1;
         }
         else hi = mid;
     }
 
-    return lo;
+    return max(0,lo-1);
 
 }
 
