@@ -4,18 +4,19 @@ using namespace std;
 #define ll long long
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
+//Looking for the index of the first element that satisfies some property.
 int BS(vector<int>a,int n,int tar){
     
-    int left=0,right=n-1;
+    int lo=0,hi=n-1;
     
-    while(left<right){
-        int mid = left + (right-left)/2;
+    while(lo<hi){
+        int mid = lo + (hi-lo)/2;
         if(property(mid)){
-            right = mid;
+            hi = mid;
         }
-        else left = mid+1;
+        else lo = mid+1;
     }
-    return left;
+    return lo;
 
 }
 

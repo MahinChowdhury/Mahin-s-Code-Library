@@ -5,14 +5,12 @@ using namespace std;
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define INF 1000000007
 
-void solve(){
+int LIS(vector<int>a){
 
-    int n;
-    cin>>n;
-    vector<int>a(n);
+    int len;
+    cin>>len;
 
-    //LIS start
-    vector<int>d(n+1,INF);
+    vector<int>d(len+1,INF);
     d[0] = -INF;
     for(int i=0 ; i<n ; i++){
         int j = upper_bound(d.begin(),d.end(),a[i])-d.begin();
@@ -23,8 +21,13 @@ void solve(){
     for(int i=0 ; i<=n ; i++){
         if(d[i]<INF) ans = i;
     }
-    //LIS end
-    
+
+    return ans;
+}
+
+void solve(){
+
+    //Start your code from here.    
 
 }
 int main(){
